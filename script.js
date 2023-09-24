@@ -2,10 +2,32 @@
 // the code isn't run until the browser has finished rendering all the elements
 // in the html.
 // date.now or datejs?? 
-var date = Date.now();
-var now= new Date().getHours()
+
+var timeClock= new Date().getHours()
+
 var saveButtons = $('.btn');
-console.log(now);
+
+var timeClockText = $('#currentDay');
+var seventeen = $('#hour-17');
+timeClockText.html(timeClock);
+
+console.log(timeClockText);
+// does my iff then work with values
+
+// lets see if we can change the background colors
+if (timeClock > 5 ){
+  console.log("it worked")
+  $('div').removeClass('future');
+  $('div').removeClass('present');
+  $('div').addClass('past');
+};
+ 
+
+if (timeClock == 18) {
+  console.log("im sleepy");
+  seventeen.addClass('present');
+}
+
 $(function () {
   // TODO: Add a listener for click events on the save button. This code should
   // use the id in the containing time-block as a key to save the user input in
