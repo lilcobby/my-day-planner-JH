@@ -8,13 +8,51 @@ var timeClock= new Date().getHours()
 var saveButtons = $('.btn');
 
 var timeClockText = $('#currentDay');
+
+var eight = $('#hour-8');
+var nine = $('#hour-9');
+var ten = $('#hour-10');
+var eleven = $('#hour-11');
+var twelve = $('#hour-12');
+var thirteen = $('#hour-13');
+var fourteen = $('#hour-14');
+var fifteen = $('#hour-15');
+var sixteen = $('#hour-16');
 var seventeen = $('#hour-17');
+// display time in time element
 timeClockText.html(timeClock);
+
+// element id = a value so the clock can check it.
+eight = 8
+nine = 9
+ten = 10
+eleven = 11
+twelve = 12
+thirteen = 13
+fourteen = 14
+fifteen = 15
+sixteen = 16
+seventeen = 17;
+
+
+// functionality block not ready yet need to make it whilre time is ><= a number in out set, do something
+while (timeClock == eight) {
+  eight.removeClass('future');
+
+}
+while (timeClock != eight){
+
+  if (timeClock > eight){
+  eight.addClass ('past');}
+  else { eight.addClass('future');}
+
+};
+
 
 console.log(timeClockText);
 // does my iff then work with values
 
-// lets see if we can change the background colors
+// lets see if we can change the background colors/ playground
 if (timeClock > 5 ){
   console.log("it worked")
   $('div').removeClass('future');
