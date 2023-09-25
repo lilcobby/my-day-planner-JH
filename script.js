@@ -3,7 +3,7 @@
 // in the html.
 // date.now or datejs?? 
 
-var timeClock= new Date().getHours()
+var timeClock= new Date().getHours();
 
 var saveButtons = $('.btn');
 
@@ -22,49 +22,194 @@ var seventeen = $('#hour-17');
 // display time in time element
 timeClockText.html(timeClock);
 
-// element id = a value so the clock can check it.
-eight = 8
-nine = 9
-ten = 10
-eleven = 11
-twelve = 12
-thirteen = 13
-fourteen = 14
-fifteen = 15
-sixteen = 16
-seventeen = 17;
+// location.reload() every 10 minutes or so
 
-
-// functionality block not ready yet need to make it whilre time is ><= a number in out set, do something
-while (timeClock == eight) {
+if (timeClock == 8) {
+  eight.addClass('present');
+  eight.removeClass('past');
   eight.removeClass('future');
 
 }
-while (timeClock != eight){
+if (timeClock == 9) {
+  nine.addClass('present');
+  eight.addClass('past');
+  eight.removeClass('present');
 
-  if (timeClock > eight){
-  eight.addClass ('past');}
-  else { eight.addClass('future');}
+  }
+if (timeClock == 10) {
+    ten.addClass('present');
+    ten.removeClass('future');
+    
+    nine.addClass('past');
+    nine.removeClass('future')
 
-};
+    eight.addClass('past');
+    eight.removeClass('future');
+
+   
+
+  }
+if (timeClock == 11){
+  eleven.addClass('present');
+  eleven.removeClass('future');
+  ten.addClass('past');
+  ten.removeClass('future');
+  nine.addClass('past');
+  nine.removeClass('future')
+  eight.addClass('past');
+  eight.removeClass('future');
+
+}
+if (timeClock == 12){
+  twelve.addClass('present');
+  twelve.removeClass('future');
+  eleven.addClass('past');
+  eleven.removeClass('future');
+  ten.addClass('past');
+  ten.removeClass('future');
+  nine.addClass('past');
+  nine.removeClass('future')
+  eight.addClass('past');
+  eight.removeClass('future');
+}
+if (timeClock == 13){
+  thirteen.addClass('present');
+  thirteen.removeClass('future');
+  twelve.addClass('past');
+  twelve.removeClass('future');
+  eleven.addClass('past');
+  eleven.removeClass('future');
+  ten.addClass('past');
+  ten.removeClass('future');
+  nine.addClass('past');
+  nine.removeClass('future')
+  eight.addClass('past');
+  eight.removeClass('future');
+}
+if (timeClock == 14){
+  fourteen.addClass('present');
+  fourteen.removeClass('future');
+  thirteen.addClass('past');
+  thirteen.removeClass('future');
+  twelve.addClass('past');
+  twelve.removeClass('future');
+  eleven.addClass('past');
+  eleven.removeClass('future');
+  ten.addClass('past');
+  ten.removeClass('future');
+  nine.addClass('past');
+  nine.removeClass('future')
+  eight.addClass('past');
+  eight.removeClass('future');
+}
+if (timeClock == 15){
+  fifteen.addClass('present');
+  fifteen.removeClass('future');
+  fourteen.addClass('past');
+  fourteen.removeClass('future');
+  thirteen.addClass('past');
+  thirteen.removeClass('future');
+  twelve.addClass('past');
+  twelve.removeClass('future');
+  eleven.addClass('past');
+  eleven.removeClass('future');
+  ten.addClass('past');
+  ten.removeClass('future');
+  nine.addClass('past');
+  nine.removeClass('future')
+  eight.addClass('past');
+  eight.removeClass('future');
+}
+if (timeClock == 16){
+  sixteen.addClass('present');
+  sixteen.removeClass('future');
+  fifteen.addClass('past');
+  fifteen.removeClass('future');
+  fourteen.addClass('past');
+  fourteen.removeClass('future');
+  thirteen.addClass('past');
+  thirteen.removeClass('future');
+  twelve.addClass('past');
+  twelve.removeClass('future');
+  eleven.addClass('past');
+  eleven.removeClass('future');
+  ten.addClass('past');
+  ten.removeClass('future');
+  nine.addClass('past');
+  nine.removeClass('future')
+  eight.addClass('past');
+  eight.removeClass('future');
+
+}
+if (timeClock == 17){
+  seventeen.addClass('present');
+  seventeen.removeClass('future');
+  sixteen.addClass('past')
+  sixteen.removeClass('future');
+  fifteen.addClass('past');
+  fifteen.removeClass('future');
+  fourteen.addClass('past');
+  fourteen.removeClass('future');
+  thirteen.addClass('past');
+  thirteen.removeClass('future');
+  twelve.addClass('past');
+  twelve.removeClass('future');
+  eleven.addClass('past');
+  eleven.removeClass('future');
+  ten.addClass('past');
+  ten.removeClass('future');
+  nine.addClass('past');
+  nine.removeClass('future')
+  eight.addClass('past');
+  eight.removeClass('future');
+}
+if (timeClock > 18){
+  $('div').addClass('future');
+}
+
+// element id = a value so the clock can check it.
+// eight = 8
+// nine = 9
+// ten = 10
+// eleven = 11
+// twelve = 12
+// thirteen = 13
+// fourteen = 14
+// fifteen = 15
+// sixteen = 16
+// seventeen = 17;
+
+
+// functionality block not ready yet need to make it whilre time is ><= a number in out set, do something
+// while (timeClock == eight) {
+//   eight.removeClass('future');
+
+// }
+// while (timeClock != eight){
+
+//   if (timeClock > eight){
+//   eight.addClass ('past');}
+//   else { eight.addClass('future');}
+
+// };
 
 
 console.log(timeClockText);
 // does my iff then work with values
 
 // lets see if we can change the background colors/ playground
-if (timeClock > 5 ){
-  console.log("it worked")
-  $('div').removeClass('future');
-  $('div').removeClass('present');
-  $('div').addClass('past');
-};
+// if (timeClock > 5 ){
+//   console.log("it worked")
+//   $('div').removeClass('future');
+//   $('div').removeClass('present');
+//   $('div').addClass('past');
+// };
  
 
-if (timeClock == 18) {
-  console.log("im sleepy");
-  seventeen.addClass('present');
-}
+// if (timeClock == 18) {
+//   console.log("im sleepy");
+//   seventeen.addClass('present');
+// }
 
 $(function () {
   // TODO: Add a listener for click events on the save button. This code should
