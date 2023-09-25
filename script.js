@@ -1,13 +1,120 @@
-// Wrap all code that interacts with the DOM in a call to jQuery to ensure that
-// the code isn't run until the browser has finished rendering all the elements
-// in the html.
-// date.now or datejs?? 
 
+
+// worst code ive ever written... im traveling it's hard...need help with loops and functions
 var timeClock= new Date().getHours();
+var todaysDate = new Date().getDate();
+var todaysMonth = new Date().getMonth();
 
-var saveButtons = $('.btn');
-
+// button id's
+var saveButton1 = $('#1');
+var saveButton2 = $('#2');
+var saveButton3 = $('#3');
+var saveButton4 = $('#4');
+var saveButton5 = $('#5');
+var saveButton6 = $('#6');
+var saveButton7 = $('#7');
+var saveButton8 = $('#8');
+var saveButton9 = $('#9');
+var saveButton10 = $('#10');
+// title text
 var timeClockText = $('#currentDay');
+
+// vars for text box functions
+var first1 = $("#first");
+var second2 = $("#second");
+var third3 = $("#third");
+var fourth4 = $("#fourth");
+var fifth5 = $("#fifth");
+var sixth6 = $("#sixth");
+var seventh7 = $("#seventh");
+var eighth8 = $("#eighth");
+var ninth9 = $("#ninth");
+var tenth10 = $("#tenth");
+
+// vars to display text in boxes
+first1.text(localStorage.getItem("inputval1"));
+second2.text(localStorage.getItem("inputval2"));
+third3.text(localStorage.getItem("inputval3"));
+fourth4.text(localStorage.getItem("inputval4"));
+fifth5.text(localStorage.getItem("inputval5"));
+sixth6.text(localStorage.getItem("inputval6"));
+seventh7.text(localStorage.getItem("inputval7"));
+eighth8.text(localStorage.getItem("inputval8"));
+ninth9.text(localStorage.getItem("inputval9"));
+tenth10.text(localStorage.getItem("inputval10"));
+
+//functions for each button
+saveButton1.click(function(){
+ 
+  var theInput = first1.val();
+  localStorage.setItem("inputval1", theInput);
+  first1.text(localStorage.getItem("inputval1"));
+
+});  
+saveButton2.click(function(){
+ 
+  var theInput = second2.val();
+  localStorage.setItem("inputval2", theInput);
+  second2.text(localStorage.getItem("inputval2"));
+
+});  
+saveButton3.click(function(){
+ 
+  var theInput = third3.val();
+  localStorage.setItem("inputval3", theInput);
+  third3.text(localStorage.getItem("inputval3"));
+
+});  
+saveButton4.click(function(){
+ 
+  var theInput = fourth4.val();
+  localStorage.setItem("inputval4", theInput);
+  fourth4.text(localStorage.getItem("inputval4"));
+
+});  
+saveButton5.click(function(){
+ 
+  var theInput = fifth5.val();
+  localStorage.setItem("inputval5", theInput);
+  fifth5.text(localStorage.getItem("inputval5"));
+
+});  
+saveButton6.click(function(){
+ 
+  var theInput = sixth6.val();
+  localStorage.setItem("inputval6", theInput);
+  sixth6.text(localStorage.getItem("inputval6"));
+
+});  
+saveButton7.click(function(){
+ 
+  var theInput = seventh7.val();
+  localStorage.setItem("inputval7", theInput);
+  seventh7.text(localStorage.getItem("inputval7"));
+
+});  
+saveButton8.click(function(){
+ 
+  var theInput = eighth8.val();
+  localStorage.setItem("inputval8", theInput);
+  eighth8.text(localStorage.getItem("inputval8"));
+
+});  
+saveButton9.click(function(){
+ 
+  var theInput = ninth9.val();
+  localStorage.setItem("inputval9", theInput);
+  ninth9.text(localStorage.getItem("inputval9"));
+
+});  
+saveButton10.click(function(){
+ 
+  var theInput = tenth10.val();
+  localStorage.setItem("inputval10", theInput);
+  tenth10.text(localStorage.getItem("inputval10"));
+
+});  
+ 
 
 var eight = $('#hour-8');
 var nine = $('#hour-9');
@@ -20,10 +127,12 @@ var fifteen = $('#hour-15');
 var sixteen = $('#hour-16');
 var seventeen = $('#hour-17');
 // display time in time element
-timeClockText.html(timeClock);
+timeClockText.html(todaysDate + " day, on the " + todaysMonth + " month of the year."  );
 
 // location.reload() every 10 minutes or so
+setInterval(function(){location.reload()}, 36000);
 
+// functions to color the boxes
 if (timeClock == 8) {
   eight.addClass('present');
   eight.removeClass('past');
@@ -165,69 +274,17 @@ if (timeClock == 17){
 }
 if (timeClock > 18){
   $('div').addClass('future');
-}
-
-// element id = a value so the clock can check it.
-// eight = 8
-// nine = 9
-// ten = 10
-// eleven = 11
-// twelve = 12
-// thirteen = 13
-// fourteen = 14
-// fifteen = 15
-// sixteen = 16
-// seventeen = 17;
-
-
-// functionality block not ready yet need to make it whilre time is ><= a number in out set, do something
-// while (timeClock == eight) {
-//   eight.removeClass('future');
-
-// }
-// while (timeClock != eight){
-
-//   if (timeClock > eight){
-//   eight.addClass ('past');}
-//   else { eight.addClass('future');}
-
-// };
-
-
-console.log(timeClockText);
-// does my iff then work with values
-
-// lets see if we can change the background colors/ playground
-// if (timeClock > 5 ){
-//   console.log("it worked")
-//   $('div').removeClass('future');
-//   $('div').removeClass('present');
-//   $('div').addClass('past');
-// };
- 
-
-// if (timeClock == 18) {
-//   console.log("im sleepy");
-//   seventeen.addClass('present');
-// }
-
-$(function () {
-  // TODO: Add a listener for click events on the save button. This code should
-  // use the id in the containing time-block as a key to save the user input in
-  // local storage. HINT: What does `this` reference in the click listener
-  // function? How can DOM traversal be used to get the "hour-x" id of the
-  // time-block containing the button that was clicked? How might the id be
-  // useful when saving the description in local storage?
-  //
-  // TODO: Add code to apply the past, present, or future class to each time
-  // block by comparing the id to the current hour. HINTS: How can the id
-  // attribute of each time-block be used to conditionally add or remove the
-  // past, present, and future classes? How can Day.js be used to get the
-  // current hour in 24-hour time?
-  //
-  // TODO: Add code to get any user input that was saved in localStorage and set
-  // the values of the corresponding textarea elements. HINT: How can the id
-  // attribute of each time-block be used to do this?
-  //
-  // TODO: Add code to display the current date in the header of the page.
+  
+};
+// button to reset our list and page
+$('#resetb').click(function(){
+  localStorage.clear();
+  location.reload();
 });
+
+
+
+
+
+
+
