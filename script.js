@@ -130,7 +130,7 @@ var seventeen = $('#hour-17');
 timeClockText.html(todaysDate + " day, on the " + todaysMonth + " month of the year."  );
 
 // location.reload() every 10 minutes or so
-setInterval(function(){location.reload()}, 36000);
+setInterval(function(){location.reload()}, 180000);
 
 // functions to color the boxes
 if (timeClock == 8) {
